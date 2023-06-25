@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Container, Divider } from '@mui/material'
 import { HeroBanner } from '../components/HeroBanner'
 import { WhyUs } from '../components/WhyUs'
 import { useNavigate } from 'react-router-dom'
@@ -9,6 +9,8 @@ import { LatestProducts } from '../components/LastestProducts'
 import { useProducts } from 'hooks/useProducts'
 import { useState } from 'react'
 import { About } from '../components/About'
+import { VisitUs } from '../components/VisitUs'
+import { PostList } from '../components/PostList'
 
 const whyUsList = [
   {
@@ -52,6 +54,15 @@ export function HomePage() {
       />
 
       <About />
+      <VisitUs onContactClick={() => navigate(`/contact`)} />
+
+      <Container>
+        <Divider />
+      </Container>
+
+      <PostList />
+
+      <Box height={600} />
     </Box>
   )
 }

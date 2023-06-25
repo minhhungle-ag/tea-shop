@@ -21,6 +21,7 @@ export function ProductCard({
       alignItems="flex-start"
       spacing={2}
       textAlign="center"
+      sx={{ cursor: 'pointer' }}
     >
       <Box
         component="img"

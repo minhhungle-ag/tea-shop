@@ -24,7 +24,15 @@ export function About() {
         width={{ xs: '100%', md: 1 / 2 }}
         sx={{ height: 'auto', bgcolor: 'primary.main' }}
       >
-        <Box sx={{ p: { xs: 2, sm: 8 }, color: 'white' }}>
+        <Stack
+          justifyContent="center"
+          sx={{
+            p: { xs: 2, sm: 8 },
+            color: 'white',
+            height: '100%',
+            maxWidth: 680,
+          }}
+        >
           <Typography variant="h6" fontWeight={400} gutterBottom>
             About us
           </Typography>
@@ -45,14 +53,16 @@ export function About() {
             metus sodales.
           </Typography>
 
-          <Button
-            variant="contained"
-            color="inherit"
-            sx={{ color: 'primary.main', textTransform: 'none' }}
-          >
-            Learn more
-          </Button>
-        </Box>
+          <Box>
+            <Button
+              variant="contained"
+              color="inherit"
+              sx={{ color: 'primary.main', textTransform: 'none' }}
+            >
+              Learn more
+            </Button>
+          </Box>
+        </Stack>
       </Box>
     </Stack>
   )
