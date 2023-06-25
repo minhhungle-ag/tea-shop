@@ -1,4 +1,3 @@
-import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
   Button,
@@ -30,7 +29,6 @@ export function ProductPage() {
     page: number
     pageSize: number
   }) {
-    console.log('model: ', model)
     setParams({
       ...params,
       page: model.page + 1,
@@ -40,18 +38,10 @@ export function ProductPage() {
 
   return (
     <Box>
-      <Stack direction="row" justifyContent="flex-end" sx={{ mb: 3 }}>
-        <Button
-          startIcon={<AddIcon />}
-          variant="contained"
-          onClick={() => navigate(`/admin/products/add-edit/create`)}
-        >
-          Add new product
-        </Button>
-      </Stack>
-
       <Box sx={{ mb: 3 }}>
-        <ProductFilter />
+        <ProductFilter
+          onAddNew={() => navigate(`/admin/products/add-edit/create`)}
+        />
       </Box>
 
       <Box>

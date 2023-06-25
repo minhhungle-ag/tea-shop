@@ -1,18 +1,19 @@
-import { Box, Stack } from '@mui/material'
+import { Box, Button, Stack } from '@mui/material'
 import { Search } from 'components/FormFields/Search'
 import { SortField } from 'components/FormFields/SortField'
 import { FilterParams } from 'models/Common'
-
+import AddIcon from '@mui/icons-material/Add'
 export interface ProductFilterProps {
   filterParams?: FilterParams
+  onAddNew?: () => void
 }
 
-export function ProductFilter({ filterParams }: ProductFilterProps) {
+export function ProductFilter({ filterParams, onAddNew }: ProductFilterProps) {
   return (
     <Stack
       direction="row"
       alignItems="center"
-      justifyContent="flex-end"
+      justifyContent="flex-start"
       spacing={2}
     >
       <Box>
@@ -24,31 +25,31 @@ export function ProductFilter({ filterParams }: ProductFilterProps) {
           label="Type"
           optionList={[
             {
-              label: 'Desc',
-              value: 'desc',
+              label: 'Tea',
+              value: 'tea',
             },
             {
-              label: 'Asc',
-              value: 'asc',
+              label: 'Snack',
+              value: 'snack',
+            },
+            {
+              label: 'Accessories',
+              value: 'accessories',
             },
           ]}
         />
       </Box>
 
+      <Box flexGrow={1} />
+
       <Box>
-        <SortField
-          label="Sort"
-          optionList={[
-            {
-              label: 'Desc',
-              value: 'desc',
-            },
-            {
-              label: 'Asc',
-              value: 'asc',
-            },
-          ]}
-        />
+        <Button
+          startIcon={<AddIcon />}
+          variant="contained"
+          onClick={() => onAddNew?.()}
+        >
+          Add new product
+        </Button>
       </Box>
     </Stack>
   )
