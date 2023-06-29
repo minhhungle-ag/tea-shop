@@ -20,7 +20,7 @@ export interface HeaderProps {
 
 export function Header({ menuList = [] }: HeaderProps) {
   return (
-    <AppBar elevation={0} color="inherit" position="static">
+    <AppBar elevation={0} color="inherit" position="static" sx={{p:1}}>
       <Container>
         <Toolbar disableGutters>
           <Box component={Link} to="/">
