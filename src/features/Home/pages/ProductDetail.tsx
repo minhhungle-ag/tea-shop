@@ -12,7 +12,7 @@ import { useForm } from 'react-hook-form'
 import { useParams } from 'react-router-dom'
 import { formatCurrencyEN } from 'utils/common'
 
-export function HomeDetail() {
+export function ProductDetail() {
   const { id } = useParams()
   const { control } = useForm({
     defaultValues: {
@@ -41,7 +41,7 @@ export function HomeDetail() {
             <Box sx={{ p: 1.5 }}>
               <Stack spacing={3}>
                 <Typography variant="h4" fontWeight={600}>
-                  Premium Green Tea - Classic Canister
+                  {data?.title}
                 </Typography>
 
                 <Typography sx={{ whiteSpace: 'pre-wrap' }}>

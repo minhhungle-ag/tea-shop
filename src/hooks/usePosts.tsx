@@ -1,44 +1,44 @@
-import { productApi } from 'api/productApi'
+import { postApi } from 'api/postApi'
 import { FilterParams } from 'models/Common'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
 
-export function useProducts(params?: FilterParams) {
-  const queryKey = ['/products', params]
+export function usePosts(params?: FilterParams) {
+  const queryKey = ['/posts', params]
   const queryClient = useQueryClient()
 
   const { data, isLoading, error } = useQuery(queryKey, () =>
-    productApi.getAll(params)
+    postApi.getAll(params)
   )
 
-  const addProduct = useMutation(productApi.add, {
+  const addPost = useMutation(postApi.add, {
     onSuccess: () => queryClient.invalidateQueries(queryKey),
   })
 
-  const editProduct = useMutation(productApi.edit, {
+  const editPost = useMutation(postApi.edit, {
     onSuccess: () => queryClient.invalidateQueries(queryKey),
   })
 
-  const removeProduct = useMutation(productApi.remove, {
+  const removePost = useMutation(postApi.remove, {
     onSuccess: () => queryClient.invalidateQueries(queryKey),
   })
 
   return {
-    productList: data?.data,
+    postList: data?.data,
     pagination: data?.pagination,
 
     isLoading,
     error,
-    addProduct,
-    editProduct,
-    removeProduct,
+    addPost,
+    editPost,
+    removePost,
   }
 }
 
-export function useProduct(id: string) {
-  const queryKey = ['/product', id]
+export function usePost(id: string) {
+  const queryKey = ['/post', id]
 
   const { data, isLoading, error } = useQuery(queryKey, () =>
-    productApi.getById(id)
+    postApi.getById(id)
   )
 
   return { data, isLoading, error }

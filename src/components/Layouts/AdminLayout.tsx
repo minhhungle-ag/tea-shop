@@ -31,8 +31,8 @@ const primaryMenuList: Menu[] = [
     icon: <ContactsIcon />,
   },
   {
-    label: 'Blogs',
-    path: '/admin/blogs',
+    label: 'Posts',
+    path: '/admin/posts',
     icon: <NewspaperIcon />,
   },
 ]

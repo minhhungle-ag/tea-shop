@@ -1,16 +1,17 @@
 import { Box, Container, Divider } from '@mui/material'
-import { HeroBanner } from '../components/HeroBanner'
-import { WhyUs } from '../components/WhyUs'
-import { useNavigate } from 'react-router-dom'
 import cup from 'assets/images/cup.svg'
 import strainer from 'assets/images/strainer.svg'
 import whisk from 'assets/images/whisk.svg'
-import { LatestProducts } from '../components/LastestProducts'
+import { usePosts } from 'hooks/usePosts'
 import { useProducts } from 'hooks/useProducts'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { About } from '../components/About'
-import { VisitUs } from '../components/VisitUs'
+import { HeroBanner } from '../components/HeroBanner'
+import { LatestProducts } from '../components/LastestProducts'
 import { PostList } from '../components/PostList'
+import { VisitUs } from '../components/VisitUs'
+import { WhyUs } from '../components/WhyUs'
 
 const whyUsList = [
   {
@@ -35,8 +36,10 @@ const whyUsList = [
 
 export function HomePage() {
   const [params] = useState({ page: 1, limit: 4 })
+  const [postParams] = useState({ page: 1, limit: 2 })
   const navigate = useNavigate()
   const { productList } = useProducts(params)
+  const { postList } = usePosts(postParams)
 
   return (
     <Box>
@@ -48,7 +51,9 @@ export function HomePage() {
       <WhyUs whyUsList={whyUsList} onViewProducts={() => navigate('/shop')} />
 
       <LatestProducts
-        onCardClick={(product) => navigate(`/home/${product._id}`)}
+        onCardClick={(product) =>
+          navigate(`/home/product-detail/${product._id}`)
+        }
         onViewProducts={() => navigate('/shop')}
         productList={productList}
       />
@@ -60,7 +65,11 @@ export function HomePage() {
         <Divider />
       </Container>
 
-      <PostList />
+      <PostList
+        postList={postList}
+        onCardClick={(post) => navigate(`/home/post-detail/${post._id}`)}
+        onViewPost={() => navigate('/blogs')}
+      />
 
       <Box height={600} />
     </Box>

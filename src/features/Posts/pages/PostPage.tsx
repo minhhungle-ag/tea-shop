@@ -1,3 +1,4 @@
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
 import {
   Box,
   Button,
@@ -8,14 +9,13 @@ import {
   DialogTitle,
   Stack,
 } from '@mui/material'
-import { useProducts } from 'hooks/useProducts'
+import { usePosts } from 'hooks/usePosts'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ProductFilter } from '../components/ProductFilter'
-import { ProductList } from '../components/ProductList'
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline'
+import { PostFilter } from '../components/PostFilter'
+import { PostList } from '../components/PostList'
 
-export function ProductPage() {
+export function PostPage() {
   const [removeId, setRemoveId] = useState('')
   const [params, setParams] = useState({
     page: 1,
@@ -23,7 +23,7 @@ export function ProductPage() {
   })
   const navigate = useNavigate()
 
-  const { productList, pagination, removeProduct } = useProducts(params)
+  const { postList, pagination, removePost } = usePosts(params)
 
   function handlePaginationModelChange(model: {
     page: number
@@ -39,21 +39,17 @@ export function ProductPage() {
   return (
     <Box>
       <Box sx={{ mb: 3 }}>
-        <ProductFilter
-          onAddNew={() => navigate(`/admin/products/add-edit/create`)}
-        />
+        <PostFilter onAddNew={() => navigate(`/admin/posts/add-edit/create`)} />
       </Box>
 
       <Box>
-        <ProductList
-          data={productList}
+        <PostList
+          data={postList}
           pagination={pagination}
           filterParams={params}
           onPaginationModelChange={handlePaginationModelChange}
-          onEditClick={(product) =>
-            navigate(`/admin/products/add-edit/${product._id}`)
-          }
-          onRemoveClick={(product) => setRemoveId(product._id as string)}
+          onEditClick={(post) => navigate(`/admin/posts/add-edit/${post._id}`)}
+          onRemoveClick={(post) => setRemoveId(post._id as string)}
         />
       </Box>
 
@@ -78,7 +74,7 @@ export function ProductPage() {
           <Button
             variant="contained"
             onClick={() => {
-              removeProduct.mutateAsync(removeId)
+              removePost.mutateAsync(removeId)
               setRemoveId('')
             }}
           >
