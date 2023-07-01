@@ -24,7 +24,7 @@ export function Header({ menuList = [], onShopNow }: HeaderProps) {
     <AppBar elevation={0} color="inherit" position="static" sx={{ py: 1 }}>
       <Container>
         <Toolbar disableGutters>
-          <Box component={Link} to="/">
+          <Box component={Link} to="/home">
             <Box component="img" alt="logo" src={logo} />
           </Box>
 
