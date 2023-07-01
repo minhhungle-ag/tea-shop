@@ -37,7 +37,9 @@ const whyUsList = [
 export function HomePage() {
   const [params] = useState({ page: 1, limit: 4 })
   const [postParams] = useState({ page: 1, limit: 2 })
+
   const navigate = useNavigate()
+
   const { productList } = useProducts(params)
   const { postList } = usePosts(postParams)
 

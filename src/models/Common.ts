@@ -15,7 +15,7 @@ export interface Pagination {
   page?: number
   limit?: number
   total: number
-  totalPage: number
+  totalPages: number
 }
 
 export interface ListResponse<T> {
@@ -26,4 +26,8 @@ export interface ListResponse<T> {
 export interface FilterParams {
   page: number
   limit: number
+
+  type?: string
+  title?: string
+  author?: string
 }

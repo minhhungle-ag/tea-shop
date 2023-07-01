@@ -32,7 +32,7 @@ export function MainLayout({ children }: MainLayoutProps) {
     <Box>
       <Header menuList={menuList} />
 
-      {children}
+      <Box minHeight="100vh">{children}</Box>
       <Footer menuList={menuList} />
     </Box>
   )
