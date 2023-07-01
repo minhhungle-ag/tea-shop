@@ -74,8 +74,11 @@ export function ShopFilter({
       </Box>
 
       <Box>
-        <Typography color="primary">Price</Typography>
-        <RangeSliderField onChange={handlePriceChange} />
+        <Typography color="primary">Price ($)</Typography>
+        <RangeSliderField
+          onChange={handlePriceChange}
+          defaultValue={[10, 50]}
+        />
       </Box>
     </Stack>
   )

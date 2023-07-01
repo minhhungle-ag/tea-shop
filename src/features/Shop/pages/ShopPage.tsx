@@ -5,6 +5,7 @@ import { useProducts } from 'hooks/useProducts'
 import { ShopFilter } from '../components/ShopFilter'
 import { FilterParams } from 'models/Common'
 import { useNavigate } from 'react-router-dom'
+import FilterListIcon from '@mui/icons-material/FilterList'
 
 export function ShopPage() {
   const [params, setParams] = useState({ page: 1, limit: 6 })
@@ -44,6 +45,16 @@ export function ShopPage() {
         <Stack direction="row" flexWrap="wrap" sx={{ my: 10, mx: -1.5 }}>
           <Box sx={{ width: { xs: '100%', sm: 250 } }}>
             <Box sx={{ px: 1.5, py: 3 }}>
+              <Stack
+                direction="row"
+                alignItems="center"
+                sx={{ mb: 2 }}
+                spacing={1}
+              >
+                <FilterListIcon color="primary" />
+                <Typography>Filters</Typography>
+              </Stack>
+
               <ShopFilter
                 filterParams={params}
                 onFilterChange={handleFilterChange}

@@ -4,14 +4,18 @@ import * as React from 'react'
 
 export interface RangeSliderFieldProps {
   max?: number
+  min?: number
+  defaultValue?: number[]
   onChange?: (value: number[]) => void
 }
 
 export default function RangeSliderField({
   max = 100,
+  min = 0,
+  defaultValue = [0, max],
   onChange,
 }: RangeSliderFieldProps) {
-  const [value, setValue] = React.useState<number[]>([0, max])
+  const [value, setValue] = React.useState<number[]>(defaultValue)
 
   const handleValueChange = (event: Event, newValue: number | number[]) => {
     setValue(newValue as number[])
@@ -26,6 +30,7 @@ export default function RangeSliderField({
         onChange={handleValueChange}
         valueLabelDisplay="auto"
         max={max}
+        min={min}
         marks={value.map((value) => ({
           value: value,
           label: value,

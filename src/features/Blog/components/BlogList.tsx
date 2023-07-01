@@ -1,15 +1,15 @@
 import { Box, Stack, Typography } from '@mui/material'
-import { ProductCard } from 'components/Common/ProductCard'
-import { ProductPayload } from 'models/Product'
+import { PostCard } from 'components/Common/PostCard'
+import { PostPayload } from 'models/Post'
 
 export interface ShopListProps {
-  productList?: ProductPayload[]
+  blogList?: PostPayload[]
   isLoading?: boolean
-  onCardClick?: (item: ProductPayload) => void
+  onCardClick?: (item: PostPayload) => void
 }
 
-export function ShopList({
-  productList = [],
+export function BlogList({
+  blogList = [],
   onCardClick,
   isLoading,
 }: ShopListProps) {
@@ -23,17 +23,20 @@ export function ShopList({
 
   return (
     <Stack direction="row" flexWrap="wrap" sx={{ mx: -1.5 }}>
-      {productList?.map((item, idx) => (
+      {blogList?.map((item, idx) => (
         <Box
-          width={{ xs: '100%', sm: 1 / 2, md: 1 / 3 }}
+          width={{ xs: '100%', sm: 1 / 2 }}
           key={idx}
           onClick={() => onCardClick?.(item)}
+          sx={{ height: 'auto' }}
         >
-          <Box sx={{ p: 1.5 }}>
-            <ProductCard
+          <Box sx={{ p: 1.5, height: '100%' }}>
+            <PostCard
+              author={item.author}
               title={item.title}
               imageUrl={item.imageUrl}
-              price={parseInt(item.price)}
+              createdAt={item.createdAt}
+              shortDescription={item.shortDescription}
             />
           </Box>
         </Box>

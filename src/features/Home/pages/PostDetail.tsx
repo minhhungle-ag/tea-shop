@@ -12,6 +12,17 @@ export function PostDetail() {
       <Container>
         <Stack sx={{ py: 10 }} spacing={3}>
           <Box>
+            <Typography fontWeight={600} color="grey">
+              By {data?.author} -{' '}
+              {dayjs(data?.createdAt).format('MMM DD, YYYY')}
+            </Typography>
+
+            <Typography variant="h4" fontWeight={600}>
+              {data?.title}
+            </Typography>
+          </Box>
+
+          <Box>
             <Box
               sx={{ width: '100%' }}
               component="img"
@@ -23,15 +34,6 @@ export function PostDetail() {
 
           <Box sx={{ width: '100%' }}>
             <Stack spacing={3}>
-              <Typography fontWeight={600} color="grey">
-                By {data?.author} -{' '}
-                {dayjs(data?.createdAt).format('MMM DD, YYYY')}
-              </Typography>
-
-              <Typography variant="h4" fontWeight={600}>
-                {data?.title}
-              </Typography>
-
               <Box
                 sx={{
                   borderLeft: '5px solid',

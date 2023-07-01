@@ -18,10 +18,14 @@ export function PostCard({
 }: PostCardProps) {
   return (
     <Stack
-      justifyContent="center"
-      alignItems="flex-start"
       spacing={2}
-      sx={{ cursor: 'pointer' }}
+      sx={{
+        width: '100%',
+        height: '100%',
+        cursor: 'pointer',
+        border: '1px solid',
+        borderColor: 'grey.300',
+      }}
     >
       <Box
         component="img"
@@ -31,7 +35,7 @@ export function PostCard({
         sx={{ aspectRatio: '16/9' }}
       />
 
-      <Box sx={{ p: 1 }}>
+      <Box sx={{ p: 3, flexGrow: 1 }}>
         <Typography fontWeight={600} color="grey">
           By {author} - {dayjs(createdAt).format('MMM DD, YYYY')}
         </Typography>

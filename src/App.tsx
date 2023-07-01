@@ -5,9 +5,13 @@ import { NotFound } from 'features/NotFound/NotFound'
 import { lazy, Suspense } from 'react'
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 
+// main
 const Home = lazy(() => import('features/Home/Home'))
-const Products = lazy(() => import('features/Products/Products'))
 const Shops = lazy(() => import('features/Shop/Shops'))
+const Blog = lazy(() => import('features/Blog/Blog'))
+
+// Admin
+const Products = lazy(() => import('features/Products/Products'))
 const Posts = lazy(() => import('features/Posts/Posts'))
 
 function Main() {
@@ -18,6 +22,7 @@ function Main() {
           <Route index element={<Navigate to="home" />} />
           <Route path="home/*" element={<Home />} />
           <Route path="shop/*" element={<Shops />} />
+          <Route path="blog/*" element={<Blog />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Outlet />

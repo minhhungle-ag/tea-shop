@@ -70,7 +70,7 @@ export function HomePage() {
       <PostList
         postList={postList}
         onCardClick={(post) => navigate(`/home/post-detail/${post._id}`)}
-        onViewPost={() => navigate('/blogs')}
+        onViewPost={() => navigate('/blog')}
       />
     </Box>
   )

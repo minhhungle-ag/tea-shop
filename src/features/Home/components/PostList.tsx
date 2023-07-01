@@ -52,8 +52,9 @@ export function PostList({
                     width={{ xs: '100%', sm: 1 / 2 }}
                     key={idx}
                     onClick={() => onCardClick?.(item)}
+                    sx={{ height: 'auto' }}
                   >
-                    <Box sx={{ p: 1.5 }}>
+                    <Box sx={{ p: 1.5, height: '100%' }}>
                       <PostCard
                         title={item.title}
                         imageUrl={item.imageUrl}

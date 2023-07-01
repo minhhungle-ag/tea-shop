@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { BlogDetail } from './pages/BlogDetail'
 import { BlogPage } from './pages/BlogPage'
 
-export function Blog() {
+export default function Blog() {
   return (
     <Routes>
       <Route index element={<BlogPage />} />
