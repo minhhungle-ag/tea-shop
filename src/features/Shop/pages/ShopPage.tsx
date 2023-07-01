@@ -6,7 +6,7 @@ import { ShopFilter } from '../components/ShopFilter'
 import { FilterParams } from 'models/Common'
 
 export function ShopPage() {
-  const [params, setParams] = useState({ page: 1, limit: 4 })
+  const [params, setParams] = useState({ page: 1, limit: 8 })
 
   const { productList, isLoading, pagination } = useProducts(params)
 

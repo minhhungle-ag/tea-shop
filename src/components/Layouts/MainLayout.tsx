@@ -14,6 +14,10 @@ const menuList: Menu[] = [
     path: '/home',
   },
   {
+    label: 'Shop',
+    path: '/shop',
+  },
+  {
     label: 'About',
     path: '/about',
   },
