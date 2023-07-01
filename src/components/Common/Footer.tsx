@@ -101,7 +101,7 @@ export function Footer({ isLoading, onSubscribe }: FooterProps) {
             <Box width={{ xs: '100%', sm: 1 / 3 }}>
               <Box sx={{ p: 3 }}>
                 <Box component={Link} to="/">
-                  <Box component="img" alt="logo" src={logo} />
+                  <Box component="img" alt="logo" loading="lazy" src={logo} />
                 </Box>
 
                 <Typography sx={{ mt: 3 }}>

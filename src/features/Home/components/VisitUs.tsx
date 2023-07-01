@@ -57,12 +57,16 @@ export function VisitUs({ onContactClick }: VisitorProps) {
                   src={visit_1}
                   alt="visit1"
                   sx={{ width: 1 / 2, mb: 15, ml: 2 }}
+                  data-aos="fade-down"
+                  data-aos-duration="2000"
                 />
                 <Box
                   component="img"
                   src={visit_2}
                   alt="visit2"
                   sx={{ width: 1 / 2, mt: 15, ml: -2 }}
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
                 />
               </Stack>
             </Box>

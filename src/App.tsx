@@ -2,7 +2,6 @@ import { LinearProgress } from '@mui/material'
 import { AdminLayout } from 'components/Layouts/AdminLayout'
 import { MainLayout } from 'components/Layouts/MainLayout'
 import { NotFound } from 'features/NotFound/NotFound'
-
 import { lazy, Suspense } from 'react'
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 

@@ -31,6 +31,7 @@ export function ShopDetail() {
               <Box
                 sx={{ width: '100%', position: { sm: 'sticky' }, top: 40 }}
                 component="img"
+                loading="lazy"
                 alt="image"
                 src={data?.imageUrl}
               />

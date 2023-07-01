@@ -56,7 +56,13 @@ export function PostList({
 
         renderCell: ({ row }) => {
           return (
-            <Box component="img" height="100%" alt="image" src={row.imageUrl} />
+            <Box
+              component="img"
+              loading="lazy"
+              height="100%"
+              alt="image"
+              src={row.imageUrl}
+            />
           )
         },
       },

@@ -25,7 +25,18 @@ export function Header({ menuList = [], onShopNow }: HeaderProps) {
       <Container>
         <Toolbar disableGutters>
           <Box component={Link} to="/home">
-            <Box component="img" alt="logo" src={logo} />
+            <Box
+              component="img"
+              alt="logo"
+              loading="lazy"
+              src={logo}
+              sx={{
+                '&:hover': {
+                  transform: 'scale(1.2)',
+                },
+                transition: '0.35s',
+              }}
+            />
           </Box>
 
           <Box flexGrow={1} />

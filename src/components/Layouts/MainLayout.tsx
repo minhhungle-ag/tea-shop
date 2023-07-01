@@ -1,4 +1,6 @@
 import { Box } from '@mui/material'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { Footer } from 'components/Common/Footer'
 import { Header } from 'components/Common/Header'
 import { useSubscribe } from 'hooks/useSubscribe'
@@ -7,7 +9,6 @@ import { SubscribePayload } from 'models/Subscribe'
 import { enqueueSnackbar } from 'notistack'
 import { ReactNode, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-
 export interface MainLayoutProps {
   children: ReactNode
 }
@@ -42,6 +43,8 @@ export function MainLayout({ children }: MainLayoutProps) {
   const navigate = useNavigate()
 
   const { addSubscribe } = useSubscribe()
+
+  AOS.init()
 
   useEffect(() => {
     window.scroll({

@@ -17,6 +17,7 @@ export function WhyUsCard({ title, imageUrl, description }: WhyUsCardProps) {
       <Box width={1 / 3}>
         <Box
           component="img"
+          loading="lazy"
           alt="img"
           width="100%"
           src={imageUrl}

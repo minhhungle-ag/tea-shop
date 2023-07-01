@@ -3,7 +3,13 @@ import about from 'assets/images/home-about.jpg'
 
 export function About() {
   return (
-    <Stack direction="row" flexWrap="wrap">
+    <Stack
+      direction="row"
+      flexWrap="wrap"
+      sx={{ bgcolor: 'primary.main' }}
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+    >
       <Box
         width={{
           xs: '100%',
@@ -14,16 +20,14 @@ export function About() {
           component="img"
           width="100%"
           height="100%"
+          loading="lazy"
           src={about}
           alt="about"
           sx={{ verticalAlign: 'middle', objectFit: 'cover' }}
         />
       </Box>
 
-      <Box
-        width={{ xs: '100%', md: 1 / 2 }}
-        sx={{ height: 'auto', bgcolor: 'primary.main' }}
-      >
+      <Box width={{ xs: '100%', md: 1 / 2 }} sx={{ height: 'auto' }}>
         <Stack
           justifyContent="center"
           sx={{

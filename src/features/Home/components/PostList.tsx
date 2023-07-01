@@ -38,7 +38,13 @@ export function PostList({
           </Box>
 
           <Box width="100%">
-            <Stack direction="row" flexWrap="wrap" sx={{ mx: -1.5 }}>
+            <Stack
+              direction="row"
+              flexWrap="wrap"
+              sx={{ mx: -1.5 }}
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               {postList &&
                 postList.length &&
                 postList.map((item, idx) => (

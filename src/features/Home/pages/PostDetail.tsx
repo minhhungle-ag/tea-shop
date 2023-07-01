@@ -15,6 +15,7 @@ export function PostDetail() {
             <Box
               sx={{ width: '100%' }}
               component="img"
+              loading="lazy"
               alt="image"
               src={data?.imageUrl}
             />

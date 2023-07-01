@@ -51,7 +51,13 @@ export default function SideBar({
     >
       <Stack height="100%" sx={{ pb: 3 }}>
         <Box component={Link} to="/admin" sx={{ p: 3 }}>
-          <Box component="img" alt="logo" width="90%" src={logo} />
+          <Box
+            component="img"
+            loading="lazy"
+            alt="logo"
+            width="90%"
+            src={logo}
+          />
         </Box>
 
         <List>

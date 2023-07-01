@@ -38,7 +38,13 @@ export function LatestProducts({
           </Box>
 
           <Box width="100%">
-            <Stack direction="row" flexWrap="wrap" sx={{ mx: -1 }}>
+            <Stack
+              direction="row"
+              flexWrap="wrap"
+              sx={{ mx: -1 }}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               {productList &&
                 productList.length &&
                 productList.map((item, idx) => (

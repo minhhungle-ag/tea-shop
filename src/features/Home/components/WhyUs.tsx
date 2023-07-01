@@ -31,7 +31,7 @@ export function WhyUs({ whyUsList = [], onViewProducts }: WhyUsProps) {
             </Typography>
           </Box>
 
-          <Box>
+          <Box data-aos="fade-up" data-aos-duration="1000">
             <Stack direction="row" flexWrap="wrap" sx={{ mx: -1 }}>
               {whyUsList?.map((item, idx) => (
                 <Box width={{ xs: '100%', sm: 1 / 2, md: 1 / 3 }} key={idx}>
