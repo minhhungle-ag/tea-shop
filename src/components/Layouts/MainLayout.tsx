@@ -1,8 +1,11 @@
 import { Box } from '@mui/material'
 import { Footer } from 'components/Common/Footer'
 import { Header } from 'components/Common/Header'
+import { useSubscribe } from 'hooks/useSubscribe'
 import { Menu } from 'models/Common'
-import { ReactNode, useEffect } from 'react'
+import { SubscribePayload } from 'models/Subscribe'
+import { enqueueSnackbar } from 'notistack'
+import { ReactNode, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 export interface MainLayoutProps {
@@ -33,8 +36,12 @@ const menuList: Menu[] = [
 ]
 
 export function MainLayout({ children }: MainLayoutProps) {
+  const [subscribeLoading, setSubscribeLoading] = useState(false)
+
   const location = useLocation()
   const navigate = useNavigate()
+
+  const { addSubscribe } = useSubscribe()
 
   useEffect(() => {
     window.scroll({
@@ -47,12 +54,31 @@ export function MainLayout({ children }: MainLayoutProps) {
     navigate('/shop')
   }
 
+  function handleSubscribe(formValues: SubscribePayload) {
+    setSubscribeLoading(true)
+
+    addSubscribe
+      .mutateAsync(formValues)
+      .then((res) => {
+        enqueueSnackbar('Thank you! Your submission has been received!', {
+          variant: 'success',
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        enqueueSnackbar(error.message, { variant: 'error' })
+      })
+      .finally(() => {
+        setSubscribeLoading(false)
+      })
+  }
+
   return (
     <Box>
       <Header menuList={menuList} onShopNow={handleShopNow} />
 
       <Box minHeight="100vh">{children}</Box>
-      <Footer />
+      <Footer onSubscribe={handleSubscribe} isLoading={subscribeLoading} />
     </Box>
   )
 }

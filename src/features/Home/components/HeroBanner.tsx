@@ -24,11 +24,11 @@ export function HeroBanner({
         <Stack
           direction="row"
           alignItems="center"
-          sx={{ py: { xs: 3, md: 10 }, mx: -5 }}
+          sx={{ py: { xs: 3, md: 10 }, mx: { sm: -5 } }}
           flexWrap="wrap"
         >
           <Box width={{ xs: '100%', md: 4 / 7 }}>
-            <Box sx={{ p: 5 }}>
+            <Box sx={{ p: { sm: 5 } }}>
               <Typography
                 variant="h3"
                 component="h1"
@@ -86,7 +86,7 @@ export function HeroBanner({
           </Box>
 
           <Box width={{ xs: '100%', md: 3 / 7 }}>
-            <Box sx={{ p: 5 }}>
+            <Box sx={{ p: { sm: 5 } }}>
               <Box component="img" alt="tea" src={tea} width="100%" />
             </Box>
           </Box>
