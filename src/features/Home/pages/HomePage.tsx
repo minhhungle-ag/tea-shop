@@ -72,8 +72,6 @@ export function HomePage() {
         onCardClick={(post) => navigate(`/home/post-detail/${post._id}`)}
         onViewPost={() => navigate('/blogs')}
       />
-
-      <Box height={600} />
     </Box>
   )
 }
