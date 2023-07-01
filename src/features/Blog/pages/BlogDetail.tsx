@@ -8,20 +8,19 @@ export function BlogDetail() {
   const { data } = usePost(id as string)
 
   return (
-    <Box>
+    <Box sx={{ py: 10 }}>
       <Container>
-        <Stack sx={{ py: 10 }} spacing={3}>
-          <Box>
-            <Typography fontWeight={600} color="grey">
-              By {data?.author} -{' '}
-              {dayjs(data?.createdAt).format('MMM DD, YYYY')}
-            </Typography>
+        <Box sx={{ mb: 5 }}>
+          <Typography fontWeight={600} color="grey">
+            By {data?.author} - {dayjs(data?.createdAt).format('MMM DD, YYYY')}
+          </Typography>
 
-            <Typography variant="h4" fontWeight={600}>
-              {data?.title}
-            </Typography>
-          </Box>
+          <Typography variant="h4" fontWeight={600}>
+            {data?.title}
+          </Typography>
+        </Box>
 
+        <Stack spacing={3}>
           <Box>
             <Box
               sx={{ width: '100%' }}
@@ -36,7 +35,7 @@ export function BlogDetail() {
             <Stack spacing={3}>
               <Box
                 sx={{
-                  borderLeft: '5px solid',
+                  borderLeft: '6px solid',
                   borderLeftColor: 'primary.main',
                   pl: 3,
                   py: 2,

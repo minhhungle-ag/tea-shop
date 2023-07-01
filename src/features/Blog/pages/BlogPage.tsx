@@ -50,7 +50,7 @@ export function BlogPage() {
             />
           </Box>
 
-          <Box>
+          <Box data-aos-duration="2000">
             <BlogList
               blogList={postList}
               isLoading={isLoading}
