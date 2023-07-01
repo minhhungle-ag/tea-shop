@@ -4,9 +4,12 @@ import { useState } from 'react'
 import { useProducts } from 'hooks/useProducts'
 import { ShopFilter } from '../components/ShopFilter'
 import { FilterParams } from 'models/Common'
+import { useNavigate } from 'react-router-dom'
 
 export function ShopPage() {
   const [params, setParams] = useState({ page: 1, limit: 6 })
+
+  const navigate = useNavigate()
 
   const { productList, isLoading, pagination } = useProducts(params)
 
@@ -55,7 +58,11 @@ export function ShopPage() {
           >
             <Stack sx={{ p: 1.5, height: '100%' }}>
               <Box flexGrow={1}>
-                <ShopList productList={productList} isLoading={isLoading} />
+                <ShopList
+                  productList={productList}
+                  isLoading={isLoading}
+                  onCardClick={(product) => navigate(`/shop/${product._id}`)}
+                />
               </Box>
 
               <Stack justifyContent="center" alignItems="center" sx={{ my: 3 }}>
