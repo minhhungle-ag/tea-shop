@@ -7,20 +7,21 @@ import {
   IconButton,
   Stack,
   Toolbar,
-} from "@mui/material";
-import logo from "assets/images/logo.svg";
-import { Menu } from "models/Common";
-import { Link, NavLink } from "react-router-dom";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import MenuIcon from "@mui/icons-material/Menu";
+} from '@mui/material'
+import logo from 'assets/images/logo.svg'
+import { Menu } from 'models/Common'
+import { Link, NavLink } from 'react-router-dom'
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
+import MenuIcon from '@mui/icons-material/Menu'
 
 export interface HeaderProps {
-  menuList: Menu[];
+  menuList: Menu[]
+  onShopNow?: () => void
 }
 
-export function Header({ menuList = [] }: HeaderProps) {
+export function Header({ menuList = [], onShopNow }: HeaderProps) {
   return (
-    <AppBar elevation={0} color="inherit" position="static" sx={{p:1}}>
+    <AppBar elevation={0} color="inherit" position="static" sx={{ py: 1 }}>
       <Container>
         <Toolbar disableGutters>
           <Box component={Link} to="/">
@@ -33,14 +34,14 @@ export function Header({ menuList = [] }: HeaderProps) {
             direction="row"
             spacing={1}
             sx={{
-              "& a": {
-                color: "inherit",
-                textDecoration: "none",
+              '& a': {
+                color: 'inherit',
+                textDecoration: 'none',
               },
-              ".active": {
-                color: "primary.main",
+              '.active': {
+                color: 'primary.main',
               },
-              "& button": { textTransform: "none", fontWeight: 600 },
+              '& button': { textTransform: 'none', fontWeight: 600 },
             }}
           >
             {menuList?.map((item, idx) => (
@@ -48,7 +49,7 @@ export function Header({ menuList = [] }: HeaderProps) {
                 component={NavLink}
                 to={item.path}
                 key={idx}
-                sx={{ display: { xs: "none", md: "flex" } }}
+                sx={{ display: { xs: 'none', md: 'flex' } }}
               >
                 <Button color="inherit">{item.label}</Button>
               </Box>
@@ -63,17 +64,22 @@ export function Header({ menuList = [] }: HeaderProps) {
             <Button
               variant="contained"
               color="primary"
-              sx={{ display: { xs: "none", md: "flex" }, borderRadius: "10px" }}
+              onClick={() => onShopNow?.()}
+              sx={{ display: { xs: 'none', md: 'flex' }, borderRadius: '10px' }}
             >
               SHOP NOW
             </Button>
-
-            <IconButton color="primary" sx={{ display: { md: "none" }, mr: 1 }}>
-              <MenuIcon fontSize="large" />
-            </IconButton>
           </Stack>
+
+          <IconButton
+            edge="end"
+            color="primary"
+            sx={{ display: { md: 'none' } }}
+          >
+            <MenuIcon fontSize="large" />
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>
-  );
+  )
 }

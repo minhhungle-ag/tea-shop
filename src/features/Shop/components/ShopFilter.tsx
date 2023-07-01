@@ -1,6 +1,8 @@
-import { Box, Stack } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
+import RangeSliderField from 'components/FormFields/RangeSliderField'
 import { Search } from 'components/FormFields/Search'
 import { SortField } from 'components/FormFields/SortField'
+import { debounce } from 'lodash'
 import { FilterParams } from 'models/Common'
 
 export interface ProductFilterProps {
@@ -15,37 +17,45 @@ export function ShopFilter({
   function handleSearchChange(searchKey?: string) {
     const newParams = {
       ...filterParams,
-      searchKey: searchKey || '',
+      searchKey,
+      page: 1,
     } as FilterParams
 
     onFilterChange?.(newParams)
   }
-  function handleSortChange(type?: string) {
+  function handleTypeChange(type?: string) {
     const newParams = {
       ...filterParams,
-      type: type || '',
+      type,
+      page: 1,
     } as FilterParams
 
     onFilterChange?.(newParams)
   }
+  const handlePriceChange = debounce((numbers: number[]) => {
+    const priceFrom = numbers[0]
+    const priceTo = numbers[1]
+
+    const newParams = {
+      ...filterParams,
+      priceFrom,
+      priceTo,
+      page: 1,
+    } as FilterParams
+
+    onFilterChange?.(newParams)
+  }, 600)
 
   return (
-    <Stack
-      direction="row"
-      alignItems="center"
-      justifyContent="flex-start"
-      spacing={2}
-    >
+    <Stack justifyContent="center" spacing={3} sx={{ width: '100%' }}>
       <Box>
         <Search onSearchChange={handleSearchChange} />
       </Box>
 
-      <Box flexGrow={1} />
-
       <Box>
         <SortField
-          onChange={handleSortChange}
-          label="Type"
+          onChange={handleTypeChange}
+          label="Category"
           optionList={[
             {
               label: 'Tea',
@@ -61,6 +71,11 @@ export function ShopFilter({
             },
           ]}
         />
+      </Box>
+
+      <Box>
+        <Typography color="primary">Price</Typography>
+        <RangeSliderField onChange={handlePriceChange} />
       </Box>
     </Stack>
   )

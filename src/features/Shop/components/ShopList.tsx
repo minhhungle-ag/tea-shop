@@ -22,14 +22,14 @@ export function ShopList({
   }
 
   return (
-    <Stack direction="row" flexWrap="wrap" sx={{ mx: -1 }}>
+    <Stack direction="row" flexWrap="wrap" sx={{ mx: -1.5 }}>
       {productList?.map((item, idx) => (
         <Box
-          width={{ xs: '100%', sm: 1 / 2, md: 1 / 4 }}
+          width={{ xs: '100%', sm: 1 / 2, md: 1 / 3 }}
           key={idx}
           onClick={() => onCardClick?.(item)}
         >
-          <Box sx={{ p: 1 }}>
+          <Box sx={{ p: 1.5 }}>
             <ProductCard
               title={item.title}
               imageUrl={item.imageUrl}

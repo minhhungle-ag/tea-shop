@@ -10,7 +10,7 @@ export function VisitUs({ onContactClick }: VisitorProps) {
   return (
     <Box sx={{ py: 15 }}>
       <Container>
-        <Stack direction="row" sx={{ mx: -3 }}>
+        <Stack direction="row" flexWrap="wrap" sx={{ mx: -3 }}>
           <Box sx={{ width: { xs: '100%', md: 1 / 2 }, height: 'auto' }}>
             <Box sx={{ p: 3, height: '100%' }}>
               <Stack justifyContent="center" height="100%">

@@ -25,7 +25,6 @@ export function Search({
       sx={{
         mr: 1,
         width: '100%',
-        minWidth: '300px',
       }}
       size="small"
       placeholder={placeholder}
