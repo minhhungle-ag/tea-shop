@@ -86,7 +86,7 @@ export function HeroBanner({
           </Box>
 
           <Box width={{ xs: '100%', md: 3 / 7 }}>
-            <Box sx={{ p: { sm: 5 } }}>
+            <Box sx={{ px: { sm: 5 }, py: 5 }}>
               <Box component="img" alt="tea" src={tea} width="100%" />
             </Box>
           </Box>

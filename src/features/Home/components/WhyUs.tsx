@@ -35,7 +35,7 @@ export function WhyUs({ whyUsList = [], onViewProducts }: WhyUsProps) {
             <Stack direction="row" flexWrap="wrap" sx={{ mx: -1 }}>
               {whyUsList?.map((item, idx) => (
                 <Box width={{ xs: '100%', sm: 1 / 2, md: 1 / 3 }} key={idx}>
-                  <Box sx={{ p: 1 }}>
+                  <Box sx={{ px: 1 }}>
                     <WhyUsCard
                       title={item.title}
                       imageUrl={item.imageUrl}

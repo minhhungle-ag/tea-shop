@@ -29,7 +29,12 @@ export function Subscribe({ isLoading, onSubscribe }: SubscribeProps) {
       noValidate
     >
       <Box>
-        <InputField name="email" control={control} sx={{ height: 32 }} />
+        <InputField
+          name="email"
+          placeholder="Enter your email..."
+          control={control}
+          sx={{ height: 32 }}
+        />
       </Box>
 
       <Box sx={{ mt: 1, ml: 2 }}>

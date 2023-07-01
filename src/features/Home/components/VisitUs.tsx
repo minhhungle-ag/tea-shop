@@ -51,7 +51,7 @@ export function VisitUs({ onContactClick }: VisitorProps) {
 
           <Box sx={{ width: { xs: '100%', md: 1 / 2 } }}>
             <Box sx={{ p: 3 }}>
-              <Stack direction="row">
+              <Stack direction="row" sx={{ ml: -2 }}>
                 <Box
                   component="img"
                   src={visit_1}

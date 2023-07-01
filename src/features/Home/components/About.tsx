@@ -27,7 +27,8 @@ export function About() {
         <Stack
           justifyContent="center"
           sx={{
-            p: { xs: 2, sm: 8 },
+            px: { xs: 2, sm: 8 },
+            py: 8,
             color: 'white',
             height: '100%',
             maxWidth: 680,
