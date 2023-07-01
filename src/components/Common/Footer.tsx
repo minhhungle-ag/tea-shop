@@ -14,10 +14,6 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 
-export interface FooterProps {
-  menuList?: Menu[]
-}
-
 const socialList = [
   {
     icon: <FacebookIcon />,
@@ -37,7 +33,33 @@ const socialList = [
   },
 ]
 
-export function Footer({ menuList }: FooterProps) {
+const menuList: Menu[] = [
+  {
+    label: 'Home',
+    path: '/home',
+  },
+  {
+    label: 'Shop',
+    path: '/shop',
+  },
+  {
+    label: 'Blog',
+    path: '/blog',
+  },
+]
+
+const aboutList = [
+  {
+    label: 'About',
+    path: '/about',
+  },
+  {
+    label: 'Find Us',
+    path: '/contact',
+  },
+]
+
+export function Footer() {
   return (
     <Box component="footer" sx={{ bgcolor: '#f5f1ea' }}>
       <Container>
@@ -45,7 +67,7 @@ export function Footer({ menuList }: FooterProps) {
           direction="row"
           flexWrap="wrap"
           justifyContent="space-between"
-          sx={{ py: 15, mx: -3 }}
+          sx={{ py: 3, mx: -3 }}
         >
           <Box width={{ xs: '100%', sm: 1 / 3 }}>
             <Box sx={{ p: 3 }}>
@@ -62,7 +84,12 @@ export function Footer({ menuList }: FooterProps) {
 
           <Box width={{ xs: '100%', sm: 'auto' }}>
             <Box sx={{ p: 3 }}>
-              <Typography variant="h6" sx={{ mb: 3 }}>
+              <Typography
+                variant="h6"
+                fontWeight={600}
+                color="primary"
+                sx={{ mb: 3 }}
+              >
                 MENU
               </Typography>
 
@@ -78,7 +105,7 @@ export function Footer({ menuList }: FooterProps) {
                   },
                 }}
               >
-                {menuList?.map((menu, idx) => (
+                {menuList.map((menu, idx) => (
                   <Box component={NavLink} to={menu.path} key={idx}>
                     <Typography>{menu.label}</Typography>
                   </Box>
@@ -89,7 +116,44 @@ export function Footer({ menuList }: FooterProps) {
 
           <Box width={{ xs: '100%', sm: 'auto' }}>
             <Box sx={{ p: 3 }}>
-              <Typography variant="h6" sx={{ mb: 3 }}>
+              <Typography
+                variant="h6"
+                sx={{ mb: 3 }}
+                fontWeight={600}
+                color="primary"
+              >
+                ABOUT
+              </Typography>
+
+              <Stack
+                sx={{
+                  '& a': {
+                    color: 'inherit',
+                    textDecoration: 'none',
+                  },
+
+                  '.active': {
+                    color: 'primary.main',
+                  },
+                }}
+              >
+                {aboutList.map((menu, idx) => (
+                  <Box component={NavLink} to={menu.path} key={idx}>
+                    <Typography>{menu.label}</Typography>
+                  </Box>
+                ))}
+              </Stack>
+            </Box>
+          </Box>
+
+          <Box width={{ xs: '100%', sm: 'auto' }}>
+            <Box sx={{ p: 3 }}>
+              <Typography
+                variant="h6"
+                fontWeight={600}
+                color="primary"
+                sx={{ mb: 3 }}
+              >
                 SOCIAL
               </Typography>
 

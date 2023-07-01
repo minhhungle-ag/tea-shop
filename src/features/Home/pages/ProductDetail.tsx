@@ -25,11 +25,11 @@ export function ProductDetail() {
   return (
     <Box>
       <Container>
-        <Stack direction="row" sx={{ mx: -1.5, py: 10 }}>
-          <Box sx={{ width: 1 / 2, height: 'auto' }}>
+        <Stack direction="row" flexWrap="wrap" sx={{ mx: -1.5, py: 10 }}>
+          <Box sx={{ width: { xs: '100%', sm: 1 / 2 }, height: 'auto' }}>
             <Box sx={{ p: 3, position: 'relative', height: '100%' }}>
               <Box
-                sx={{ width: '100%', position: 'sticky', top: 40 }}
+                sx={{ width: '100%', position: { sm: 'sticky' }, top: 40 }}
                 component="img"
                 alt="image"
                 src={data?.imageUrl}
@@ -37,7 +37,7 @@ export function ProductDetail() {
             </Box>
           </Box>
 
-          <Box sx={{ width: 1 / 2 }}>
+          <Box sx={{ width: { xs: '100%', sm: 1 / 2 } }}>
             <Box sx={{ p: 1.5 }}>
               <Stack spacing={3}>
                 <Typography variant="h4" fontWeight={600}>
