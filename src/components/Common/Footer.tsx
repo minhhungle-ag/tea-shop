@@ -131,7 +131,9 @@ export function Footer({ isLoading, onSubscribe }: FooterProps) {
 
                     '.active': {
                       color: 'primary.main',
-                      fontWeight: 600,
+                      '& p': {
+                        fontWeight: 600,
+                      },
                     },
                   }}
                 >
@@ -164,7 +166,9 @@ export function Footer({ isLoading, onSubscribe }: FooterProps) {
 
                     '.active': {
                       color: 'primary.main',
-                      fontWeight: 600,
+                      '& p': {
+                        fontWeight: 600,
+                      },
                     },
                   }}
                 >
