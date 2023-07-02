@@ -7,7 +7,7 @@ export function About() {
       direction="row"
       flexWrap="wrap"
       sx={{ bgcolor: 'primary.main' }}
-      data-aos="zoom-in"
+      data-aos="fade-up"
       data-aos-duration="1000"
     >
       <Box
