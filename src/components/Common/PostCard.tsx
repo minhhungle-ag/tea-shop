@@ -37,7 +37,8 @@ export function PostCard({
 
       <Box sx={{ p: 3, flexGrow: 1 }}>
         <Typography fontWeight={600} color="grey">
-          By {author} - {dayjs(createdAt).format('MMM DD, YYYY')}
+          {author && 'By ' + author}
+          {createdAt && ' - ' + dayjs(createdAt).format('MMM DD, YYYY')}
         </Typography>
 
         <Typography variant="h6" fontWeight={700}>

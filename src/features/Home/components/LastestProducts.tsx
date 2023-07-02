@@ -19,7 +19,7 @@ export function LatestProducts({
         <Stack spacing={10} alignItems="center">
           <Box textAlign="center" maxWidth={650} sx={{ mx: 'auto' }}>
             <Typography
-              variant="h6"
+              variant="h5"
               fontWeight={400}
               color="primary"
               gutterBottom

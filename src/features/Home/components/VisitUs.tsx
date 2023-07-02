@@ -15,7 +15,7 @@ export function VisitUs({ onContactClick }: VisitorProps) {
             <Box sx={{ p: 3, height: '100%' }}>
               <Stack justifyContent="center" height="100%">
                 <Typography
-                  variant="h6"
+                  variant="h5"
                   fontWeight={400}
                   color="primary"
                   gutterBottom

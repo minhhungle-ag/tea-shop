@@ -38,7 +38,7 @@ export function About() {
             maxWidth: 680,
           }}
         >
-          <Typography variant="h6" fontWeight={400} gutterBottom>
+          <Typography variant="h5" fontWeight={400} gutterBottom>
             About us
           </Typography>
 

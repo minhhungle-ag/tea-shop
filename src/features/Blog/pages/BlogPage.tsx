@@ -26,22 +26,27 @@ export function BlogPage() {
 
   return (
     <Box>
-      <Box textAlign="center" maxWidth={700} sx={{ mx: 'auto', my: 10 }}>
-        <Typography variant="h4" fontWeight={400} color="primary" gutterBottom>
-          Blog
-        </Typography>
-
-        <Typography variant="h4" fontWeight={600} gutterBottom>
-          Explore Recipes & Tips
-        </Typography>
-
-        <Typography>
-          Fusce ornare tristique eros, sit amet vehicula ligula pretium et.
-          Quisque eleifend turpis sed libero venenatis accumsan.
-        </Typography>
-      </Box>
-
       <Container>
+        <Box textAlign="center" maxWidth={700} sx={{ mx: 'auto', my: 10 }}>
+          <Typography
+            variant="h5"
+            fontWeight={400}
+            color="primary"
+            gutterBottom
+          >
+            Blog
+          </Typography>
+
+          <Typography variant="h4" fontWeight={600} gutterBottom>
+            Explore Recipes & Tips
+          </Typography>
+
+          <Typography>
+            Fusce ornare tristique eros, sit amet vehicula ligula pretium et.
+            Quisque eleifend turpis sed libero venenatis accumsan.
+          </Typography>
+        </Box>
+
         <Stack sx={{ my: 10 }}>
           <Box sx={{ mb: 3 }}>
             <BlogFilter

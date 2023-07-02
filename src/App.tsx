@@ -9,6 +9,7 @@ import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 const Home = lazy(() => import('features/Home/Home'))
 const Shops = lazy(() => import('features/Shop/Shops'))
 const Blog = lazy(() => import('features/Blog/Blog'))
+const FindUs = lazy(() => import('features/FindUs/pages/FindUs'))
 
 // Admin
 const Products = lazy(() => import('features/Products/Products'))
@@ -23,6 +24,7 @@ function Main() {
           <Route path="home/*" element={<Home />} />
           <Route path="shop/*" element={<Shops />} />
           <Route path="blog/*" element={<Blog />} />
+          <Route path="contact" element={<FindUs />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Outlet />

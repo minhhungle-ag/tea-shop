@@ -26,22 +26,27 @@ export function ShopPage() {
 
   return (
     <Box>
-      <Box textAlign="center" maxWidth={700} sx={{ mx: 'auto', my: 10 }}>
-        <Typography variant="h4" fontWeight={400} color="primary" gutterBottom>
-          Shop
-        </Typography>
-
-        <Typography variant="h4" fontWeight={600} gutterBottom>
-          Pick Your Favorite Tea
-        </Typography>
-
-        <Typography>
-          Cras dapibus varius sapien ac efficitur. Fusce tempus tellus quis
-          laoreet volutpat. Pellentesque vehicula pellentesque nulla at.
-        </Typography>
-      </Box>
-
       <Container>
+        <Box textAlign="center" maxWidth={700} sx={{ mx: 'auto', my: 10 }}>
+          <Typography
+            variant="h5"
+            fontWeight={400}
+            color="primary"
+            gutterBottom
+          >
+            Shop
+          </Typography>
+
+          <Typography variant="h4" fontWeight={600} gutterBottom>
+            Pick Your Favorite Tea
+          </Typography>
+
+          <Typography>
+            Cras dapibus varius sapien ac efficitur. Fusce tempus tellus quis
+            laoreet volutpat. Pellentesque vehicula pellentesque nulla at.
+          </Typography>
+        </Box>
+
         <Stack direction="row" flexWrap="wrap" sx={{ my: 10, mx: -1.5 }}>
           <Box sx={{ width: { xs: '100%', sm: 250 } }}>
             <Box sx={{ px: 1.5, py: 3 }}>

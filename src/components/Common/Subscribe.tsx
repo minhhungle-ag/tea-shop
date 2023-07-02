@@ -44,7 +44,7 @@ export function Subscribe({ isLoading, onSubscribe }: SubscribeProps) {
           type="submit"
           sx={{ height: 49 }}
         >
-          Subscribe
+          {isLoading ? 'Loading...' : 'Subscribe'}
         </Button>
       </Box>
     </Stack>
