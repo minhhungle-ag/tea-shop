@@ -54,10 +54,9 @@ export default function FindUs() {
 
         <Box sx={{ my: 10 }}>
           <Box
-            boxShadow={1}
             sx={{
               position: 'relative',
-              width: { xs: '100%', md: 1 / 2 },
+              width: { xs: '100%', md: 2 / 3 },
               mx: 'auto',
               mb: -15,
               p: 3,
@@ -65,6 +64,7 @@ export default function FindUs() {
               borderRadius: '8px',
               bgcolor: 'white',
               zIndex: 1,
+              boxShadow: (theme) => theme.shadows[24],
             }}
           >
             <Typography

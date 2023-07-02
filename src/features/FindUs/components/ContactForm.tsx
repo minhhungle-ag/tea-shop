@@ -17,7 +17,7 @@ export interface ContactFormProps {
 }
 
 export function ContactForm({ loading, onSubmit }: ContactFormProps) {
-  const { control, handleSubmit } = useForm<ContactPayload>({
+  const { control, handleSubmit, reset } = useForm<ContactPayload>({
     defaultValues: {
       name: '',
       email: '',
@@ -30,6 +30,7 @@ export function ContactForm({ loading, onSubmit }: ContactFormProps) {
 
   const handleFormSubmit = handleSubmit((formValues: ContactPayload) => {
     onSubmit?.(formValues)
+    reset()
   })
 
   return (
@@ -42,6 +43,7 @@ export function ContactForm({ loading, onSubmit }: ContactFormProps) {
         <InputField name="phone" control={control} label="Phone" />
 
         <InputField
+          sx={{ whiteSpace: 'pre-wrap' }}
           rows={5}
           multiline
           name="description"
