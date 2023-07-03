@@ -77,7 +77,7 @@ export function MainLayout({ children }: MainLayoutProps) {
   }
 
   return (
-    <Box>
+    <Box width="100vw" sx={{ overflowX: 'hidden' }}>
       <Header menuList={menuList} onShopNow={handleShopNow} />
 
       <Box minHeight="100vh">{children}</Box>
