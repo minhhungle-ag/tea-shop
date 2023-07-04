@@ -39,23 +39,18 @@ export function OurFounder() {
                     color="primary"
                     gutterBottom
                   >
-                    Visit Us
+                    Our Founder
                   </Typography>
 
                   <Typography variant="h4" fontWeight={600} gutterBottom>
-                    Visit Our Cafe & Plantation
+                    The Art of Green Tea: A Family Legacy
                   </Typography>
 
-                  <Typography sx={{ mb: 3 }}>
-                    Sed blandit purus tincidunt gravida consequat. Cras
-                    condimentum, sapien non elementum malesuada, magna nunc
-                    maximus neque, a dictum nisi nisi non lorem.
-                  </Typography>
-
-                  <Typography sx={{ mb: 3 }}>
-                    Donec euismod viverra lorem, at fermentum ex eleifend vel.
-                    Proin congue molestie ipsum. Sed aliquam elit eget euismod
-                    sollicitudin. Quisque quis eros a turpis luctus aliquet.
+                  <Typography>
+                    Nullam malesuada bibendum finibus. Integer interdum
+                    malesuada risus a rhoncus. Vivamus tempus quam dapibus,
+                    hendrerit nulla vitae, imperdiet leo. Vestibulum consequat
+                    nulla nec neque sodales interdum.
                   </Typography>
                 </Stack>
               </Box>
