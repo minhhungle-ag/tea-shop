@@ -18,8 +18,8 @@ const Posts = lazy(() => import('features/Posts/Posts'))
 
 function Main() {
   return (
-    <MainLayout>
-      <Suspense fallback={<LinearProgress />}>
+    <Suspense fallback={<LinearProgress />}>
+      <MainLayout>
         <Routes>
           <Route index element={<Navigate to="home" />} />
           <Route path="home/*" element={<Home />} />
@@ -30,8 +30,8 @@ function Main() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Outlet />
-      </Suspense>
-    </MainLayout>
+      </MainLayout>
+    </Suspense>
   )
 }
 
