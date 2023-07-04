@@ -1,0 +1,68 @@
+import { Box, Container, Stack, Typography } from '@mui/material'
+import AboutFounder from 'assets/images/AboutFounder.jpg'
+
+export function OurFounder() {
+  return (
+    <Box
+      sx={{ position: 'relative', bgcolor: '#f5f1ea' }}
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
+      <Box
+        sx={{
+          position: { md: 'absolute' },
+          right: 0,
+          top: 0,
+          width: { md: '50%' },
+          height: '100%',
+        }}
+      >
+        <Box
+          width="100%"
+          height="100%"
+          component="img"
+          alt="visit"
+          src={AboutFounder}
+          sx={{ verticalAlign: 'middle' }}
+        />
+      </Box>
+
+      <Box sx={{ py: 7 }}>
+        <Container>
+          <Stack direction="row" flexWrap="wrap" sx={{ ml: { sm: -8 } }}>
+            <Box sx={{ width: { xs: '100%', md: 1 / 2 }, height: 'auto' }}>
+              <Box sx={{ p: { sm: 8 }, height: '100%' }}>
+                <Stack justifyContent="center" height="100%">
+                  <Typography
+                    variant="h5"
+                    fontWeight={400}
+                    color="primary"
+                    gutterBottom
+                  >
+                    Visit Us
+                  </Typography>
+
+                  <Typography variant="h4" fontWeight={600} gutterBottom>
+                    Visit Our Cafe & Plantation
+                  </Typography>
+
+                  <Typography sx={{ mb: 3 }}>
+                    Sed blandit purus tincidunt gravida consequat. Cras
+                    condimentum, sapien non elementum malesuada, magna nunc
+                    maximus neque, a dictum nisi nisi non lorem.
+                  </Typography>
+
+                  <Typography sx={{ mb: 3 }}>
+                    Donec euismod viverra lorem, at fermentum ex eleifend vel.
+                    Proin congue molestie ipsum. Sed aliquam elit eget euismod
+                    sollicitudin. Quisque quis eros a turpis luctus aliquet.
+                  </Typography>
+                </Stack>
+              </Box>
+            </Box>
+          </Stack>
+        </Container>
+      </Box>
+    </Box>
+  )
+}

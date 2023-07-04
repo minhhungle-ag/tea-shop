@@ -1,5 +1,6 @@
-import { Box, Button, Container, Stack, Typography } from '@mui/material'
+import { Box, Button, Container, Stack } from '@mui/material'
 import { ProductCard } from 'components/Common/ProductCard'
+import { Title } from 'components/Common/Title'
 import { ProductPayload } from 'models/Product'
 
 export interface WhyUsProps {
@@ -17,25 +18,12 @@ export function LatestProducts({
     <Box sx={{ py: 15 }}>
       <Container>
         <Stack spacing={10} alignItems="center">
-          <Box textAlign="center" maxWidth={650} sx={{ mx: 'auto' }}>
-            <Typography
-              variant="h5"
-              fontWeight={400}
-              color="primary"
-              gutterBottom
-            >
-              Our Tea
-            </Typography>
-
-            <Typography variant="h4" fontWeight={600} gutterBottom>
-              Latest Products
-            </Typography>
-
-            <Typography>
-              Maecenas convallis, quam quis porta ornare, felis ligula posuere
-              dui, non placerat enim dolor ac justo.
-            </Typography>
-          </Box>
+          <Title
+            pageName="Our Tea"
+            title="Latest Products"
+            subtitle="Maecenas convallis, quam quis porta ornare, felis ligula posuere
+            dui, non placerat enim dolor ac justo."
+          />
 
           <Box width="100%">
             <Stack

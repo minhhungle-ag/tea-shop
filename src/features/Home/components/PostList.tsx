@@ -1,5 +1,6 @@
-import { Box, Button, Container, Stack, Typography } from '@mui/material'
+import { Box, Button, Container, Stack } from '@mui/material'
 import { PostCard } from 'components/Common/PostCard'
+import { Title } from 'components/Common/Title'
 import { PostPayload } from 'models/Post'
 
 export interface WhyUsProps {
@@ -17,25 +18,12 @@ export function PostList({
     <Box sx={{ py: 15 }}>
       <Container>
         <Stack spacing={10} alignItems="center">
-          <Box textAlign="center" maxWidth={650} sx={{ mx: 'auto' }}>
-            <Typography
-              variant="h5"
-              fontWeight={400}
-              color="primary"
-              gutterBottom
-            >
-              Blog
-            </Typography>
-
-            <Typography variant="h4" fontWeight={600} gutterBottom>
-              Creative Recipes & Tips
-            </Typography>
-
-            <Typography>
-              Aenean sodales nisl non dui lacinia luctus. Curabitur vitae luctus
-              eros. Vivamus fermentum dictum metus, et.
-            </Typography>
-          </Box>
+          <Title
+            pageName="Blog"
+            title="Creative Recipes & Tips"
+            subtitle="Aenean sodales nisl non dui lacinia luctus. Curabitur vitae luctus
+            eros. Vivamus fermentum dictum metus, et."
+          />
 
           <Box width="100%">
             <Stack

@@ -1,4 +1,5 @@
 import { Box, Container, Typography } from '@mui/material'
+import { Title } from 'components/Common/Title'
 import { useContacts } from 'hooks/useContacts'
 import { ContactPayload } from 'models/Contact'
 import { enqueueSnackbar } from 'notistack'
@@ -32,24 +33,13 @@ export default function FindUs() {
   return (
     <Box>
       <Container>
-        <Box textAlign="center" maxWidth={700} sx={{ mx: 'auto', my: 10 }}>
-          <Typography
-            variant="h5"
-            fontWeight={400}
-            color="primary"
-            gutterBottom
-          >
-            Find Us
-          </Typography>
-
-          <Typography variant="h4" fontWeight={600} gutterBottom>
-            Get in Touch - Reserve a Table
-          </Typography>
-
-          <Typography>
-            Cras dapibus varius sapien ac efficitur. Fusce tempus tellus quis
-            laoreet volutpat. Pellentesque vehicula pellentesque nulla at.
-          </Typography>
+        <Box sx={{ my: 10 }}>
+          <Title
+            pageName="Find Us"
+            title="Get in Touch - Reserve a Table"
+            subtitle="Cras dapibus varius sapien ac efficitur. Fusce tempus tellus quis
+            laoreet volutpat. Pellentesque vehicula pellentesque nulla at."
+          />
         </Box>
 
         <Box sx={{ my: 10 }}>

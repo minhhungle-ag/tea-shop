@@ -1,11 +1,12 @@
-import { Box, Container, Pagination, Stack, Typography } from '@mui/material'
-import { ShopList } from '../components/ShopList'
-import { useState } from 'react'
-import { useProducts } from 'hooks/useProducts'
-import { ShopFilter } from '../components/ShopFilter'
-import { FilterParams } from 'models/Common'
-import { useNavigate } from 'react-router-dom'
 import FilterListIcon from '@mui/icons-material/FilterList'
+import { Box, Container, Pagination, Stack, Typography } from '@mui/material'
+import { Title } from 'components/Common/Title'
+import { useProducts } from 'hooks/useProducts'
+import { FilterParams } from 'models/Common'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { ShopFilter } from '../components/ShopFilter'
+import { ShopList } from '../components/ShopList'
 
 export function ShopPage() {
   const [params, setParams] = useState({ page: 1, limit: 6 })
@@ -27,24 +28,13 @@ export function ShopPage() {
   return (
     <Box>
       <Container>
-        <Box textAlign="center" maxWidth={700} sx={{ mx: 'auto', my: 10 }}>
-          <Typography
-            variant="h5"
-            fontWeight={400}
-            color="primary"
-            gutterBottom
-          >
-            Shop
-          </Typography>
-
-          <Typography variant="h4" fontWeight={600} gutterBottom>
-            Pick Your Favorite Tea
-          </Typography>
-
-          <Typography>
-            Cras dapibus varius sapien ac efficitur. Fusce tempus tellus quis
-            laoreet volutpat. Pellentesque vehicula pellentesque nulla at.
-          </Typography>
+        <Box sx={{ my: 10 }}>
+          <Title
+            pageName="Shop"
+            title="Pick Your Favorite Tea"
+            subtitle="Cras dapibus varius sapien ac efficitur. Fusce tempus tellus quis
+            laoreet volutpat. Pellentesque vehicula pellentesque nulla at."
+          />
         </Box>
 
         <Stack direction="row" flexWrap="wrap" sx={{ my: 10, mx: -1.5 }}>

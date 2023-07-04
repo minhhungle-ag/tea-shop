@@ -1,4 +1,5 @@
-import { Box, Button, Container, Stack, Typography } from '@mui/material'
+import { Box, Button, Container, Stack } from '@mui/material'
+import { Title } from 'components/Common/Title'
 import { WhyUsCard, WhyUsCardProps } from 'components/Common/WhyUsCard'
 
 export interface WhyUsProps {
@@ -11,25 +12,12 @@ export function WhyUs({ whyUsList = [], onViewProducts }: WhyUsProps) {
     <Box sx={{ bgcolor: '#f5f1ea', py: 15 }}>
       <Container>
         <Stack spacing={10} alignItems="center">
-          <Box textAlign="center" maxWidth={650} sx={{ mx: 'auto' }}>
-            <Typography
-              variant="h5"
-              fontWeight={400}
-              color="primary"
-              gutterBottom
-            >
-              Why Serene Leaf
-            </Typography>
-
-            <Typography variant="h4" fontWeight={600} gutterBottom>
-              Explore the Special Qualities of Our Green Tea
-            </Typography>
-
-            <Typography>
-              Phasellus sed erat metus. Cras pharetra, elit sit amet molestie
-              placerat, metus lectus sodales purus, posuere.
-            </Typography>
-          </Box>
+          <Title
+            pageName="  Why Serene Leaf"
+            title="Explore the Special Qualities of Our Green Tea"
+            subtitle="Phasellus sed erat metus. Cras pharetra, elit sit amet molestie
+            placerat, metus lectus sodales purus, posuere."
+          />
 
           <Box data-aos="fade-up" data-aos-duration="1000">
             <Stack direction="row" flexWrap="wrap" sx={{ mx: -1 }}>
