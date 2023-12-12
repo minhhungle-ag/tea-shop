@@ -77,9 +77,8 @@ export function MainLayout({ children }: MainLayoutProps) {
   }
 
   return (
-    <Box>
+    <Box sx={{ bgcolor: 'grey.300' }}>
       <Header menuList={menuList} onShopNow={handleShopNow} />
-
       <Box minHeight="100vh">{children}</Box>
       <Footer onSubscribe={handleSubscribe} isLoading={subscribeLoading} />
     </Box>
