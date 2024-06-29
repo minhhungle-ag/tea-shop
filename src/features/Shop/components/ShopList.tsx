@@ -31,7 +31,7 @@ export function ShopList({
         >
           <Box sx={{ p: 1.5 }}>
             <ProductCard
-              title={item.title}
+              title={item.name}
               imageUrl={item.imageUrl}
               price={parseInt(item.price)}
             />

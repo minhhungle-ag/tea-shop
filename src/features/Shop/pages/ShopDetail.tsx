@@ -1,24 +1,25 @@
 import {
   Box,
-  Button,
+  // Button,
   Container,
   Divider,
   Stack,
   Typography,
 } from '@mui/material'
-import { InputField } from 'components/FormFields/InputField'
-import { useProduct } from 'hooks/useProducts'
-import { useForm } from 'react-hook-form'
 import { useParams } from 'react-router-dom'
 import { formatCurrencyEN } from 'utils/common'
+import { useProduct } from 'hooks/useProducts'
+
+// import { InputField } from 'components/FormFields/InputField'
+// import { useForm } from 'react-hook-form'
 
 export function ShopDetail() {
   const { id } = useParams()
-  const { control } = useForm({
-    defaultValues: {
-      quantity: 0,
-    },
-  })
+  // const { control } = useForm({
+  //   defaultValues: {
+  //     quantity: 0,
+  //   },
+  // })
 
   const { data } = useProduct(id as string)
 
@@ -42,7 +43,7 @@ export function ShopDetail() {
             <Box sx={{ p: 1.5 }}>
               <Stack spacing={3}>
                 <Typography variant="h4" fontWeight={600}>
-                  {data?.title}
+                  {data?.name}
                 </Typography>
 
                 <Typography sx={{ whiteSpace: 'pre-wrap' }}>
@@ -53,7 +54,7 @@ export function ShopDetail() {
                   Price: {formatCurrencyEN(Number(data?.price) || 0)}
                 </Typography>
 
-                <Box>
+                {/* <Box>
                   <Typography>Quantity</Typography>
                   <Stack direction="row" alignItems="center" spacing={1}>
                     <Box width={100}>
@@ -74,7 +75,7 @@ export function ShopDetail() {
                       </Button>
                     </Box>
                   </Stack>
-                </Box>
+                </Box> */}
 
                 <Divider />
 

@@ -1,6 +1,6 @@
-import { Box, Button, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import { formatCurrencyEN } from 'utils/common'
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
+// import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 
 export interface ProductCardProps {
   title?: string
@@ -13,8 +13,8 @@ export function ProductCard({
   title,
   imageUrl,
   price,
-  onAddToCart,
-}: ProductCardProps) {
+}: // onAddToCart,
+ProductCardProps) {
   return (
     <Stack
       justifyContent="center"
@@ -31,12 +31,16 @@ export function ProductCard({
         sx={{ aspectRatio: '1/1' }}
       />
 
-      <Typography textAlign="left">{title}</Typography>
+      <Box textAlign="left">
+        <Typography fontWeight={600}>{title}</Typography>
 
-      <Typography>{formatCurrencyEN(price || 0)}</Typography>
-      <Button endIcon={<ArrowRightAltIcon />} onClick={() => onAddToCart?.()}>
+        <Typography fontStyle="italic">
+          {formatCurrencyEN(price || 0)}
+        </Typography>
+      </Box>
+      {/* <Button endIcon={<ArrowRightAltIcon />} onClick={() => onAddToCart?.()}>
         Add to cart
-      </Button>
+      </Button> */}
     </Stack>
   )
 }

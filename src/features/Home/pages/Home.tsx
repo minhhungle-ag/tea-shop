@@ -34,7 +34,7 @@ const whyUsList = [
   },
 ]
 
-export function HomePage() {
+export default function Home() {
   const [params] = useState({ page: 1, limit: 4 })
   const [postParams] = useState({ page: 1, limit: 2 })
 
@@ -53,9 +53,7 @@ export function HomePage() {
       <WhyUs whyUsList={whyUsList} onViewProducts={() => navigate('/shop')} />
 
       <LatestProducts
-        onCardClick={(product) =>
-          navigate(`/home/product-detail/${product.id}`)
-        }
+        onCardClick={(product) => navigate(`/shop/${product.id}`)}
         onViewProducts={() => navigate('/shop')}
         productList={productList}
       />
@@ -70,7 +68,7 @@ export function HomePage() {
 
       <PostList
         postList={postList}
-        onCardClick={(post) => navigate(`/home/post-detail/${post.id}`)}
+        onCardClick={(post) => navigate(`/blog/${post.id}`)}
         onViewPost={() => navigate('/blog')}
       />
     </Box>

@@ -43,7 +43,7 @@ export function LatestProducts({
                   >
                     <Box sx={{ p: 1 }}>
                       <ProductCard
-                        title={item.title}
+                        title={item.name}
                         imageUrl={item.imageUrl}
                         price={parseInt(item.price)}
                       />
