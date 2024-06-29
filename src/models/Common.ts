@@ -15,7 +15,7 @@ export interface Pagination {
   page?: number
   limit?: number
   total: number
-  totalPages: number
+  totalPage: number
 }
 
 export interface ListResponse<T> {

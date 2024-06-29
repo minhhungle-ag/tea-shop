@@ -33,7 +33,7 @@ export function PostList({
   const rows = data.map((item, idx) => ({
     ...item,
     key: idx,
-    id: item._id,
+    id: item.id,
   }))
 
   const columns = useCallback((): GridColDef[] => {

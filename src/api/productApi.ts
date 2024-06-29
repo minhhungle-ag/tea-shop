@@ -17,8 +17,8 @@ export const productApi = {
   },
 
   edit(payload: ProductPayload): Promise<any> {
-    const { _id, ...body } = payload
-    return axiosClient.put(`${url}/${_id}`, body)
+    const { id, ...body } = payload
+    return axiosClient.put(`${url}/${id}`, body)
   },
 
   remove(id: string): Promise<any> {

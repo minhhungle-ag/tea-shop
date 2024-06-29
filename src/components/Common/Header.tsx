@@ -1,6 +1,6 @@
 import {
   AppBar,
-  Badge,
+  // Badge,
   Box,
   Button,
   Container,
@@ -11,7 +11,7 @@ import {
 import logo from 'assets/images/logo.svg'
 import { Menu } from 'models/Common'
 import { Link, NavLink } from 'react-router-dom'
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
+// import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
 import MenuIcon from '@mui/icons-material/Menu'
 
 export interface HeaderProps {
@@ -45,6 +45,7 @@ export function Header({ menuList = [], onShopNow }: HeaderProps) {
             direction="row"
             spacing={1}
             sx={{
+              flexGrow: 1,
               '& a': {
                 color: 'inherit',
                 textDecoration: 'none',
@@ -65,22 +66,22 @@ export function Header({ menuList = [], onShopNow }: HeaderProps) {
                 <Button color="inherit">{item.label}</Button>
               </Box>
             ))}
-
+            {/* 
             <IconButton color="inherit" sx={{ mr: 2 }}>
               <Badge badgeContent={1} color="primary">
                 <ShoppingBagOutlinedIcon />
               </Badge>
-            </IconButton>
-
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => onShopNow?.()}
-              sx={{ display: { xs: 'none', md: 'flex' }, borderRadius: '10px' }}
-            >
-              SHOP NOW
-            </Button>
+            </IconButton> */}
           </Stack>
+
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => onShopNow?.()}
+            sx={{ display: { xs: 'none', md: 'flex' }, borderRadius: '10px' }}
+          >
+            SHOP NOW
+          </Button>
 
           <IconButton
             edge="end"

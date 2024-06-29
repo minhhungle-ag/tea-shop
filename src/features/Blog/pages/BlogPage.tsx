@@ -49,7 +49,7 @@ export function BlogPage() {
             <BlogList
               blogList={postList}
               isLoading={isLoading}
-              onCardClick={(blog) => navigate(`/blog/${blog._id}`)}
+              onCardClick={(blog) => navigate(`/blog/${blog.id}`)}
             />
 
             <Stack justifyContent="center" alignItems="center" sx={{ my: 3 }}>
@@ -57,7 +57,7 @@ export function BlogPage() {
                 variant="outlined"
                 shape="rounded"
                 page={params.page}
-                count={pagination?.totalPages}
+                count={pagination?.totalPage}
                 onChange={handlePageChange}
               />
             </Stack>

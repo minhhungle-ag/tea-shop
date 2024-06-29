@@ -54,13 +54,14 @@ export function HomePage() {
 
       <LatestProducts
         onCardClick={(product) =>
-          navigate(`/home/product-detail/${product._id}`)
+          navigate(`/home/product-detail/${product.id}`)
         }
         onViewProducts={() => navigate('/shop')}
         productList={productList}
       />
 
       <About />
+
       <VisitUs onContactClick={() => navigate(`/contact`)} />
 
       <Container>
@@ -69,7 +70,7 @@ export function HomePage() {
 
       <PostList
         postList={postList}
-        onCardClick={(post) => navigate(`/home/post-detail/${post._id}`)}
+        onCardClick={(post) => navigate(`/home/post-detail/${post.id}`)}
         onViewPost={() => navigate('/blog')}
       />
     </Box>

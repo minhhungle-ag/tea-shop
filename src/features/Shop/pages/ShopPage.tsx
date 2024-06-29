@@ -67,7 +67,7 @@ export function ShopPage() {
                 <ShopList
                   productList={productList}
                   isLoading={isLoading}
-                  onCardClick={(product) => navigate(`/shop/${product._id}`)}
+                  onCardClick={(product) => navigate(`/shop/${product.id}`)}
                 />
               </Box>
 
@@ -76,7 +76,7 @@ export function ShopPage() {
                   variant="outlined"
                   shape="rounded"
                   page={params.page}
-                  count={pagination?.totalPages}
+                  count={pagination?.totalPage}
                   onChange={handlePageChange}
                 />
               </Stack>

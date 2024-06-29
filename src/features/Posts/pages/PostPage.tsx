@@ -48,8 +48,8 @@ export function PostPage() {
           pagination={pagination}
           filterParams={params}
           onPaginationModelChange={handlePaginationModelChange}
-          onEditClick={(post) => navigate(`/admin/posts/add-edit/${post._id}`)}
-          onRemoveClick={(post) => setRemoveId(post._id as string)}
+          onEditClick={(post) => navigate(`/admin/posts/add-edit/${post.id}`)}
+          onRemoveClick={(post) => setRemoveId(post.id as string)}
         />
       </Box>
 

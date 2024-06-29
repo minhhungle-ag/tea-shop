@@ -51,9 +51,9 @@ export function ProductPage() {
           filterParams={params}
           onPaginationModelChange={handlePaginationModelChange}
           onEditClick={(product) =>
-            navigate(`/admin/products/add-edit/${product._id}`)
+            navigate(`/admin/products/add-edit/${product.id}`)
           }
-          onRemoveClick={(product) => setRemoveId(product._id as string)}
+          onRemoveClick={(product) => setRemoveId(product.id as string)}
         />
       </Box>
 
